@@ -1,0 +1,40 @@
+{
+ "dataset": "10.5281/zenodo.24117444",
+ "encoders": {
+  "code": "microsoft/codebert-base",
+  "history": "microsoft/codebert-base",
+  "discourse": "sentence-transformers/all-mpnet-base-v2"
+ },
+ "views": [
+  "code",
+  "history",
+  "discourse"
+ ],
+ "lr_encoder": 2e-05,
+ "lr_head": 0.001,
+ "rows_per_step": 16,
+ "select": "ap",
+ "cap": 64,
+ "batch_windows": 192,
+ "threshold": 0.7943849563598633,
+ "weight_decay": 0.01,
+ "dropout": 0.2,
+ "warmup": 0.1,
+ "clip": 1.0,
+ "epochs": 10,
+ "patience": 3,
+ "seed": 42,
+ "gpu": "NVIDIA A100-SXM4-80GB",
+ "run": {
+  "key": "lr2e-05",
+  "best_epoch": 4,
+  "validation_ap": 0.10618902721443776
+ },
+ "versions": {
+  "python": "3.12.3",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.22.2",
+  "scikit-learn": "1.9.1",
+  "pandas": "3.1.1"
+ }
+}

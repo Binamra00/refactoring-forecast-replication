@@ -1,0 +1,12 @@
+view,kind,texts,median,p90,p99,max,longer_than_one_window
+code,skeleton,40377,335,1591,8872,52747,35.7
+code,method,195312,148,808,4194,57896,17.2
+code,file,8,13346,23810,23972,23990,100.0
+discourse,issue body,4898,281,1047,3945,24635,39.0
+discourse,pr body,10455,162,580,1979,19672,30.4
+discourse,pr comment,31885,44,849,2875,63519,14.4
+discourse,issue comment,22285,40,230,1056,59424,4.8
+discourse,review,46015,23,91,339,8158,0.8
+history,commit message,24273,18,79,210,133041,0.3
+history,diff part (text minus message),164357,173,1156,6882,279927,23.6
+history,whole text (message + diff),164357,212,1273,7127,279930,26.0

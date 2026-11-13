@@ -1,0 +1,12 @@
+stage,epoch,training minutes,validation scoring minutes,training-sample scoring minutes,epoch minutes,peak GPU GB
+epoch,1.0,125.46,2.46,1.77,129.69,16.7
+epoch,2.0,126.14,2.45,1.77,130.36,16.4
+epoch,3.0,125.5,2.45,1.77,129.73,16.3
+epoch,4.0,124.88,2.45,1.77,129.1,16.3
+epoch,5.0,125.32,2.47,1.78,129.56,16.4
+epoch,6.0,126.41,2.45,1.77,130.63,16.5
+epoch,7.0,126.02,2.45,1.78,130.25,16.2
+"final scoring, train rows",,,,,3.22,
+"final scoring, validation rows",,,,,2.46,
+"final scoring, test rows",,,,,3.64,
+total,,879.7299999999999,17.18,12.409999999999998,918.6400000000001,16.7
