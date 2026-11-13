@@ -12,7 +12,7 @@ The data lives on Zenodo, and the code that builds and uses it lives here.
 |---|---|
 | Mined inputs: release grids, Quarry's outputs and a git bundle of each repo | Zenodo, [10.5281/zenodo.24182007](https://doi.org/10.5281/zenodo.24182007) |
 | The dataset: 462,120 rows with their code, history and discourse texts | Zenodo, [10.5281/zenodo.24117444](https://doi.org/10.5281/zenodo.24117444) (version 2.1) |
-| Quarry, the mining tool | `<QUARRY_URL>` |
+| Quarry, the mining tool | [<QUARRY>](https://github.com/Binamra00/quarry.git) |
 | Release mining, the release-tree scripts, Notebooks 0–4 and the final run's results | this repository |
 
 ## Contents
