@@ -23,7 +23,6 @@ release_mining/
 scripts/
   build_intervals.py             helpers that build_release_tree.py imports
   build_release_tree.py          the release tree: each release's parent and the commits between them
-  make_zenodo_mined.py           packs the mined inputs for Zenodo (one zip and one git bundle per repo)
 notebooks/
   notebook_0_production.ipynb    which .java files are production code
   notebook_1_CBERT.ipynb         one labelled row per production file per release
@@ -58,7 +57,7 @@ Every notebook finds its working folder the same way: `QUARRY_HOME` if it is set
 This is the usual way to replicate the dataset. It downloads what was mined and needs no mining tool.
 
 ```
-git clone <THIS_REPO_URL>
+git clone https://github.com/Binamra00/refactoring-forecast-replication.git
 cd refactoring-forecast-replication
 pip install -r requirements.txt
 cd notebooks
