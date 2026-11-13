@@ -140,8 +140,6 @@ To mine the repos yourself instead of downloading the mined inputs:
    ```
 4. **The dataset.** Run Notebooks 0–3 as in Path A. Their download cell finds your files and
    downloads nothing.
-5. **Packing (optional).** `python scripts/make_zenodo_mined.py workspace_data <out_folder>` packs
-   the mined inputs the way the Zenodo record holds them.
 
 ## Known limitations
 
