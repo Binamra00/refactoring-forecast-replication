@@ -14,6 +14,7 @@ The data lives on Zenodo, and the code that builds and uses it lives here.
 | The dataset: 462,120 rows with their code, history and discourse texts | Zenodo, [10.5281/zenodo.24117444](https://doi.org/10.5281/zenodo.24117444) (version 2.1) |
 | Quarry, the mining tool | [QUARRY](https://github.com/Binamra00/quarry.git) |
 | Release mining, the release-tree scripts, Notebooks 0–4 and the final run's results | this repository |
+| The trained weights of the reported run (1.4 GB) | Hugging Face, [Binamra00/refactoring-forecaster](https://huggingface.co/Binamra00/refactoring-forecaster) |
 
 ## Contents
 
@@ -117,6 +118,8 @@ A run that stops part-way resumes from its last finished epoch when you start it
 On the test releases the model reaches an AP of 0.079 (base rate 3.2%) and a ROC-AUC of 0.713. Code
 contributes most to separating refactored files from the rest.
 
+To score files without training, load the reported weights from Hugging Face (Binamra00/refactoring-forecaster) with its `forecaster.py`.
+
 ### The preliminary runs
 
 `results/preliminary/` holds two earlier runs of Notebook 4. They used version 1.0 of the dataset,
@@ -183,7 +186,39 @@ at the root of this repository (for example `QUARRY_HOME=E:\refactoring-forecast
   missing from the labels.
 - **Closed items only.** Quarry mined closed issues and pull requests only. Commons-Lang tracks its
   issues in Jira, so its rows have no issue texts.
-- **The trained weights are not here.** They take 1.4 GB.
+
+## Acknowledgements
+ 
+This package builds on the work of others.
+ 
+- **Mining.** Quarry ran RefactoringMiner, whose detections are the labels, and read the issues,
+  pull requests, comments and reviews through the GitHub REST API. Notebook 3 parses Java with
+  tree-sitter-java.
+- **The model.** It fine-tunes CodeBERT and all-mpnet-base-v2, a Sentence-BERT model built on MPNet,
+  with Hugging Face Transformers and PyTorch. The scores use scikit-learn.
+- **The data.** The code, commits and discussions come from Apache Commons Lang, Checkstyle, Apache
+  Dubbo, JUnit and QuestDB, and from the developers and GitHub users who wrote them.
+- **Compute.** The reported run trained on an NVIDIA A100 rented from RunPod.
+  
+References:
+- Tsantalis, N., Ketkar, A. and Dig, D. (2022). RefactoringMiner 2.0. *IEEE Transactions on Software
+  Engineering* 48(3), 930–950. https://doi.org/10.1109/TSE.2020.3007722
+- Tsantalis, N., Mansouri, M., Eshkevari, L. M., Mazinanian, D. and Dig, D. (2018). Accurate and
+  Efficient Refactoring Detection in Commit History. *ICSE 2018*, 483–494.
+  https://doi.org/10.1145/3180155.3180206
+- Feng, Z. et al. (2020). CodeBERT: A Pre-Trained Model for Programming and Natural Languages.
+  *Findings of EMNLP 2020*. https://doi.org/10.18653/v1/2020.findings-emnlp.139
+- Reimers, N. and Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese
+  BERT-Networks. *EMNLP-IJCNLP 2019*. https://doi.org/10.18653/v1/D19-1410
+- Song, K., Tan, X., Qin, T., Lu, J. and Liu, T.-Y. (2020). MPNet: Masked and Permuted Pre-training
+  for Language Understanding. *NeurIPS 2020*. https://arxiv.org/abs/2004.09297
+- Wolf, T. et al. (2020). Transformers: State-of-the-Art Natural Language Processing. *EMNLP 2020:
+  System Demonstrations*. https://doi.org/10.18653/v1/2020.emnlp-demos.6
+- Paszke, A. et al. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library.
+  *NeurIPS 2019*. https://arxiv.org/abs/1912.01703
+- Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. *Journal of Machine
+  Learning Research* 12, 2825–2830.
+- Brunsfeld, M. et al. *tree-sitter* and *tree-sitter-java*. https://github.com/tree-sitter/tree-sitter-java
 
 ## Citation
 
