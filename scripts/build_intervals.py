@@ -7,20 +7,26 @@ Reads workspace_data/versions/rel_hist_<repo>.json and the clone in workspace_da
 Writes workspace_data/outputs/intervals_<repo>.json, alongside the other mined artifacts, so it
 uploads with them.
 
+THIS STUDY USES THE RELEASE TREE, NOT THIS FILE'S OUTPUT
+
+    Run on its own, this script orders all releases in ONE list and makes each interval the commits
+    between neighbours in that list. The study instead uses build_release_tree.py, which gives every
+    release a parent and writes the tree as intervals_<repo>.json (--write-intervals). That script
+    imports git(), read_releases() and find_rel_hist() from here, so keep the two files side by side.
+
 WHY NOT TIMESTAMPS
 
     A commit authored in January on a feature branch and merged in June belongs, by date, to
     whichever release was cut in between -- a release its code was never in. `git rev-list A..B`
     asks what B contains that A does not, which is what "shipped in this release" means.
 
-    It also matches the CK snapshots, which are taken AT the release commits. Assigning commits
-    by date and metrics by ancestry would put them in different frames, and the disagreement
-    would be silent: every join would succeed and some rows would describe the wrong interval.
+    It also matches the rows, which are the files AT the release commits. Assigning commits by
+    date and files by ancestry would put them in different frames, and the disagreement would be
+    silent: every join would succeed and some rows would describe the wrong interval.
 
-MUST RUN LOCALLY
+NEEDS THE CLONES
 
-    It reads the git clones. Everything downstream reads the JSON it writes, so this is the
-    only step that needs the repositories.
+    It reads the git clones in workspace_data/repos/, as Notebooks 0-3 do.
 """
 import json
 import subprocess
