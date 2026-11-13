@@ -1,0 +1,10 @@
+# Everything the notebooks download or write
+workspace_data/
+notebooks/notebook_4_model_cbert_3/
+*.bundle
+*_mined.zip
+*.pt
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+venv/

@@ -1,0 +1,8 @@
+# Release mining, the scripts and Notebooks 0-3 (run locally; git must be on PATH)
+jupyterlab
+ipywidgets
+numpy
+pandas
+pyarrow
+tree-sitter==0.26.0
+tree-sitter-java==0.23.5

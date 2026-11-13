@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this replication package, please cite it and the two Zenodo records it builds on."
+title: "Forecasting Release-Level Refactoring from Code, History and Discourse: Replication Package"
+type: software
+authors:
+  - family-names: Aryal
+    given-names: Binamra
+    affiliation: "The University of Texas at Arlington"
+license: MIT
+date-released: "2026-11-12"
+references:
+  - type: dataset
+    title: "Code, Commit History and Issue/PR Discourse for Forecasting Refactoring"
+    authors:
+      - family-names: Aryal
+        given-names: Binamra
+    version: "2.1"
+    doi: 10.5281/zenodo.24117444
+  - type: dataset
+    title: "Mined Inputs for the Code, Commit History and Issue/PR Discourse Refactoring Dataset"
+    authors:
+      - family-names: Aryal
+        given-names: Binamra
+    version: "1.0"
+    doi: 10.5281/zenodo.24182007

@@ -1,0 +1,8 @@
+# Notebook 4, as the reported run used them (Python 3.12.3, CUDA 12.8)
+torch==2.8.0
+transformers==5.22.2
+scikit-learn==1.9.1
+pandas==3.1.1
+numpy
+pyarrow
+matplotlib
