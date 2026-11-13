@@ -140,6 +140,40 @@ To mine the repos yourself instead of downloading the mined inputs:
 4. **The dataset.** Run Notebooks 0–3 as in Path A. Their download cell finds your files and
    downloads nothing.
 
+## Path C: mine everything again
+
+To mine the repos yourself instead of downloading the mined inputs. Quarry and this repository
+must share one workspace: in Quarry's `.env`, set `QUARRY_HOME` to the `workspace_data/` folder
+at the root of this repository (for example `QUARRY_HOME=E:\refactoring-forecast-replication\workspace_data`).
+
+1. **Release grid.** Run `release_mining/rel_tag_mining_v4.ipynb`. For each repo it writes
+   `rel_hist_<repo>.json`, `<repo>_release_manifest.json` and `adapter_universe_<repo>.json` to
+   `workspace_data/versions/`, where Quarry looks for them. It clones the repos as they are
+   today, so HEAD differs from the study's grid (frozen on 15 July 2026); our rerun on
+   12 November 2026 kept the same 542 releases at the same commits.
+2. **Mining.** Install [Quarry](https://github.com/Binamra00/quarry) and run, for each repo
+   (Git Bash):
+   ```bash
+   for u in apache/commons-lang checkstyle/checkstyle apache/dubbo junit-team/junit-framework questdb/questdb; do
+     P=${u#*/}
+     quarry --repo https://github.com/$u.git --stage meta
+     quarry --repo $P --stage ledger  --universe adapter_universe_$P.json --batch 0
+     quarry --repo $P --stage refm    --universe adapter_universe_$P.json --batch 0
+     quarry --repo $P --stage diff    --universe adapter_universe_$P.json --batch 0
+     quarry --repo $P --stage channel --platform git    --channel commits --universe adapter_universe_$P.json --batch 0
+     quarry --repo $P --stage channel --platform github --channel all --batch 0
+     quarry --repo $P --stage link
+   done
+   ```
+   The GitHub channels need `GITHUB_TOKEN` in Quarry's `.env` and take the longest. Every
+   command can be stopped and run again; it continues where it stopped.
+3. **Release tree.** From the root of this repository:
+   ```
+   python scripts/build_release_tree.py workspace_data --write-intervals commons-lang checkstyle dubbo junit-framework questdb
+   ```
+4. **The dataset.** Run Notebooks 0–3 as in Path A. Their download cell finds your files and
+   downloads nothing.
+
 ## Known limitations
 
 - **Commits hidden by history simplification.** Quarry's RefactoringMiner, diff and commit-message
