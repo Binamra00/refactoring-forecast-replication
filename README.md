@@ -156,7 +156,8 @@ The notebook writes its results to `workspace_data/outputs/notebook_5_codescene/
 | `comparison_codescene.csv` | the base rate and each method's AP, lift and ROC-AUC, per repo and as the mean over repos |
 | `comparison_codescene.tex` | the same comparison as the thesis table |
  
-The reported scores came from version 1.0.58 of CodeScene's command-line tool. The model's AP and ROC-AUC exceed Code Health's in all five repos. Over the five repos,
+The reported scores came from version 1.0.58 of CodeScene's command-line tool with its default
+settings (none of the five repos has a `.codescene` settings folder in its history). The model's AP and ROC-AUC exceed Code Health's in all five repos. Over the five repos,
 its mean AP is 0.120 against 0.102, and its mean ROC-AUC 0.727 against 0.632. CodeScene returned no
 Code Health for 25,212 of the test rows, which the comparison counts as healthy. On the scored
 files alone, the model's mean AP is 0.122 against 0.106.
@@ -194,6 +195,7 @@ python scripts/build_release_tree.py workspace_data --write-intervals commons-la
 ```
 4. **The dataset.** Run Notebooks 0–3 as in Path A. Their download cell finds your files and
    downloads nothing.
+ 
 ## Known limitations
  
 - **Commits hidden by history simplification.** Quarry's RefactoringMiner, diff and commit-message
