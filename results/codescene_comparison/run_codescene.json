@@ -1,0 +1,24 @@
+{
+  "cs version": "cs version 1.0.58 (b2580d71be8fbfd6a496d7a007062c0c81cd2b60)\nBuilt on Windows Server 2025 amd64 at 2026-11-09",
+  "machine": {
+    "system": "Windows 11 AMD64",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "logical CPUs": 8,
+    "RAM GB": 15.8
+  },
+  "review in repo": true,
+  "workers": 8,
+  "batch size": 25,
+  "releases timed": 148,
+  "releases in total": 148,
+  "files timed": 200438,
+  "prepare min": 6.3,
+  "review min": 44.6,
+  "wall-clock min": 51.0,
+  "peak memory GB": {
+    "cs, all running": 1.22,
+    "cs, one process": 0.3,
+    "notebook kernel": 0.61
+  },
+  "files not reviewed": 0
+}

@@ -1,0 +1,18 @@
+smell,files,% of scored files
+Excess Number of Function Arguments,40502,23.1
+Complex Method,27883,15.9
+Bumpy Road Ahead,24551,14.0
+Primitive Obsession,21327,12.2
+Complex Conditional,17242,9.8
+"Deep, Nested Complexity",13758,7.9
+Code Duplication,8235,4.7
+Constructor Over-Injection,7230,4.1
+Large Method,7223,4.1
+Overall Code Complexity,5129,2.9
+String Heavy Function Arguments,4457,2.5
+Brain Method,1711,1.0
+Low Cohesion,1122,0.6
+Number of Functions in a Single Module,715,0.4
+Lines of Code in a Single File,441,0.3
+Overall Function Size,68,0.0
+Lines of Declarations in a Single File,31,0.0
